@@ -1,0 +1,8 @@
+{% extends 'base.html.twig' %}
+{% block title %}Team{% endblock %}
+{% block body %}
+    <!-- Team Start -->
+    {{ render(controller('App\\Controller\\PageController::teamTemplate')) }}
+    <!-- Team End -->
+
+{% endblock %}
