@@ -2,7 +2,7 @@
 {% block title %}Team{% endblock %}
 {% block body %}
     <!-- Team Start -->
-    {{ render(controller('App\\Controller\\PageController::teamTemplate')) }}
+    {{ include ('partials/_team.html.twig')}}
     <!-- Team End -->
 
 {% endblock %}
