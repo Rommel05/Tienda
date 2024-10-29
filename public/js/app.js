@@ -15,4 +15,6 @@
     $(".closeInfoProduct").click(function (e) {
         infoProduct.modal('hide');
     });
+
+    const cart = $();
 })();
