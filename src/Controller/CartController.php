@@ -16,6 +16,7 @@ class CartController extends AbstractController
     private $repository;
     private $cart;
 
+    #[Route(path:'/cart')]
     public  function __construct(ManagerRegistry $doctrine, CartService $cart)
     {
         $this->doctrine = $doctrine;

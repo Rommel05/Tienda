@@ -3,6 +3,7 @@
 namespace App\Controller;
 
 use App\Entity\Team;
+use App\Service\ProductsService;
 use App\Service\TeamService;
 use Doctrine\Persistence\ManagerRegistry;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
@@ -12,10 +13,11 @@ use Symfony\Component\Routing\Annotation\Route;
 class PageController extends AbstractController
 {
     #[Route('/', name: 'index')]
-    public function index(TeamService $teamService): Response
+    public function index(TeamService $teamService, ProductsService $productsService): Response
     {
         $team = $teamService->getTeam();
-        return $this->render('page/index.html.twig', compact('team'));
+        $products = $productsService->getProducts();
+        return $this->render('page/index.html.twig', compact('team', 'products'));
     }
 
     #[Route('/about', name: 'about')]
